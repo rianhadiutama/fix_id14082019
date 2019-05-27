@@ -64,14 +64,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    var assetImage = new AssetImage('assets/fixid.png');
+    var image = new Image(image: assetImage , width: 128.0,height: 128.0);
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: <Color>[Colors.cyanAccent,Colors.blueAccent,Colors.blue]),
+              gradient: LinearGradient(colors: <Color>[Color(0xFF0d1456),Colors.blue,Colors.tealAccent]),
             ),
+
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -79,30 +84,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Expanded(
                 flex: 2,
                 child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 50.0,
-                        child: Icon(
-                          Icons.place,
-                          color: Colors.greenAccent,
-                          size: 50.0,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 10.0),
-                      ),
-                      Text(
-                        "FIX ID",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24.0),
-                      )
-                    ],
-                  ),
+                  child: image
                 ),
               ),
               Expanded(

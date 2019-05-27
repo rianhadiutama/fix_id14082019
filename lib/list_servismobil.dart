@@ -40,9 +40,18 @@ class _ListServisMobilState extends State<ListServisMobil> {
   @override  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+            actions: <Widget>[
+
+            ],
+            leading: new Container(),
             title: Text('MOBIL',
                 style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold))),
+                    color: Colors.white, fontWeight: FontWeight.bold
+                )
+            )
+        )
+
+      ,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0, // this will be set when a new tab is tapped
         items: [
@@ -101,7 +110,7 @@ class _ListServisMobilState extends State<ListServisMobil> {
                                 new Container(
                                   child:
                                   new FlatButton(key:null, onPressed:(){
-                                   // Navigator.push(context, MaterialPageRoute(builder: (context) => Deskripsi()),);
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => DeskripsiServis()),);
                                   },
                                       child:
                                       new Image.network(

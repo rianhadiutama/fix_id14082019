@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'startlogin.dart';
 import 'dashboard.dart';
 import 'dashboardelektronik.dart';
 import 'dashboardkendaraan.dart';
@@ -55,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       Duration(seconds: 5),
           (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Login()
         ),
         );
       },

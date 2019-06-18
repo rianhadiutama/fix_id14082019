@@ -11,8 +11,13 @@ class _PesanJasa extends State<PesanJasa> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
-        title: new Text('FIX ID'),
+        title: new Text('DATA PEMESANAN',
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold
+            )
+        ),
 
         actions: <Widget>[
 
@@ -45,21 +50,7 @@ class _PesanJasa extends State<PesanJasa> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   //DATA PEMESANAN
-                  new Container(
-                    child:
-                      new Text(
-                      "DATA PEMESANAN",
-                        style: new TextStyle(fontSize:23.0,
-                        color: const Color(0xFF000000),
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Roboto"),
-                      ),
-    
-                    padding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 1.0),
-                    alignment: Alignment.centerLeft,
-                    width: 200.0,
-                    height: 75.0,
-                  ),
+
     
                   //ISI DATA 
                   new Container(
@@ -76,8 +67,7 @@ class _PesanJasa extends State<PesanJasa> {
                         new TextField(
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: 'Nama Pemesanan Anda',
-                              labelText: 'Nama Anda'),
+                              labelText: 'Nama Lengkap'),
                           controller: new TextEditingController(),
                           ),
                         ]
@@ -96,9 +86,9 @@ class _PesanJasa extends State<PesanJasa> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                         new TextField(
+                          keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: 'contoh@emailanda.com',
                               labelText: 'Email'),
                           controller: new TextEditingController(),
                           ),
@@ -149,6 +139,39 @@ class _PesanJasa extends State<PesanJasa> {
                         ]
                       ),
                   ),
+                  new Container(
+                    padding: const EdgeInsets.fromLTRB(3.0, 3.0, 3.0, 1.0),
+                    alignment: Alignment.center,
+                    width: 300.0,
+                    height: 100.0,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        new MaterialButton(
+                          minWidth: 100.0,
+                          height: 42.0,
+                          onPressed: () {
+
+                          },
+                          color: Colors.cyan[800],
+                          child: Text('Pesan Sekarang', style: TextStyle(color: Colors.white)),
+                        ),
+                        new MaterialButton(
+                          minWidth: 100.0,
+                          height: 42.0,
+                          onPressed: () {
+
+                          },
+                          color: Colors.cyan[800],
+                          child: Text('Cancel', style: TextStyle(color: Colors.white)),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
 
     
                 ]

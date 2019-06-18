@@ -114,10 +114,16 @@ class _LoginState extends State<Login> {
           ),
         ),
       );
-
+      final registrationLabel = FlatButton(
+        child: Text(
+          'Belum Daftar? Registrasi!',
+          style: TextStyle(color: Colors.black54),
+        ),
+        onPressed: () {},
+      );
       final forgotLabel = FlatButton(
         child: Text(
-          'Forgot password?',
+          'Lupa Password?',
           style: TextStyle(color: Colors.black54),
         ),
         onPressed: () {},
@@ -138,7 +144,8 @@ class _LoginState extends State<Login> {
               password,
               SizedBox(height: 24.0),
               loginButton,
-              forgotLabel
+              forgotLabel,
+              registrationLabel,
             ],
           ),
         ),

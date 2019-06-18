@@ -36,7 +36,7 @@ class Home_Deskripsi extends State<DeskripsiServis> {
                                                       "Pesan Jasa",
                                                       style: new TextStyle(fontSize:12.0,
                                                           color: const Color(0xFF000000),
-                                                          fontWeight: FontWeight.w200,
+                                                          fontWeight: FontWeight.bold,
                                                           fontFamily: "Roboto"),
                                                     )
                                                 )
@@ -46,13 +46,15 @@ class Home_Deskripsi extends State<DeskripsiServis> {
 
                                           padding: const EdgeInsets.all(0.0),
                                           alignment: Alignment.center,
-                                          width: 250.0,
+                                          width: 270.0,
                                           height: 64.0,
-                                        );
-    }else{
-      return new Container(
-                                          child:
-                                          new Row(
+
+      );
+
+      }else{
+          return new Container(
+               child:
+                    new Row(
                                               mainAxisAlignment: MainAxisAlignment.end,
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +75,7 @@ class Home_Deskripsi extends State<DeskripsiServis> {
                                                       "Pesan Jasa",
                                                       style: new TextStyle(fontSize:12.0,
                                                           color: const Color(0xFF000000),
-                                                          fontWeight: FontWeight.w200,
+                                                          fontWeight: FontWeight.bold,
                                                           fontFamily: "Roboto"),
                                                     )
                                                 )
@@ -263,9 +265,9 @@ class Home_Deskripsi extends State<DeskripsiServis> {
                     new Container(
                       child:
                       new Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[
                             new Icon(
                                 Icons.location_on,
@@ -275,10 +277,10 @@ class Home_Deskripsi extends State<DeskripsiServis> {
                             new Container(
                               child:
                               new Text(
-                                "Jl. Baros no. 26, Kabupaten Cibodas, Kecamatan Cimahi Tengah Cimahi",
+                                "Jl. Baros no. 26, Kabupaten Cibodas, Kecamatan Cimahi Tengah, Kota Cimahi",
                                 style: new TextStyle(fontSize:13.0,
                                     color: const Color(0xFF000000),
-                                    fontWeight: FontWeight.w200,
+                                    fontWeight: FontWeight.bold,
                                     fontFamily: "Roboto"),
                               ),
 

@@ -135,7 +135,7 @@ class _DashboardElektronikState extends State<DashboardElektronik> {
                               padding: const EdgeInsets.all(10.0),
                               alignment: Alignment.center,
                               width: 1.7976931348623157e+308,
-                              height: 160.0,
+                              height: 100.0,
                             )
                           ]
 
@@ -158,7 +158,7 @@ class _DashboardElektronikState extends State<DashboardElektronik> {
                 padding: const EdgeInsets.all(5.0),
                 alignment: Alignment.center,
                 width: 1.7976931348623157e+308,
-                height: 250.0,
+                height: 175.0,
               )
             ]
 

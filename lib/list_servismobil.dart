@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'deskripsibengkel.dart';
+import 'maps.dart';
 
 class ListServisMobil extends StatefulWidget {
   static String tag = 'contactlist-page';
@@ -9,35 +10,26 @@ class ListServisMobil extends StatefulWidget {
   }
 }
 
-List<Contact> contacts = [
-  Contact(fullName: 'Pratap Kumar', email: 'pratap@example.com'),
-  Contact(fullName: 'Jagadeesh', email: 'Jagadeesh@example.com'),
-  Contact(fullName: 'Srinivas', email: 'Srinivas@example.com'),
-  Contact(fullName: 'Narendra', email: 'Narendra@example.com'),
-  Contact(fullName: 'Sravan ', email: 'Sravan@example.com'),
-  Contact(fullName: 'Ranganadh', email: 'Ranganadh@example.com'),
-  Contact(fullName: 'Karthik', email: 'Karthik@example.com'),
-  Contact(fullName: 'Saranya', email: 'Saranya@example.com'),
-  Contact(fullName: 'Mahesh', email: 'Mahesh@example.com'),
-];
+
 class _ListServisMobilState extends State<ListServisMobil> {
-  TextEditingController searchController = new TextEditingController();
-  String filter;
-
-  @override  initState() {
-    searchController.addListener(() {
-      setState(() {
-        filter = searchController.text;
-      });
-    });
+  PageController _pageController;
+  int _page = 0;
+  @override
+  void initState(){
+    super.initState();
+    _pageController = new PageController();
   }
-
-  @override  void dispose() {
-    searchController.dispose();
+  @override
+  void dispose(){
     super.dispose();
+    _pageController.dispose();
   }
 
-  @override  Widget build(BuildContext context) {
+  void navigationTapped(int page){
+    _pageController.animateToPage(page, duration: const Duration(milliseconds: 300), curve: Curves.ease);
+  }
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
             actions: <Widget>[
@@ -52,23 +44,7 @@ class _ListServisMobilState extends State<ListServisMobil> {
         )
 
       ,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile')
-          )
-        ],
-      ),
+
         body:
         new Container(
           child:
@@ -79,15 +55,25 @@ class _ListServisMobilState extends State<ListServisMobil> {
               children: <Widget>[
                 new Padding(
                   padding: new EdgeInsets.all(8.0),
-                  child: new TextField(
-                    controller: searchController,
-                    decoration: InputDecoration(
-                      hintText: "Cari Mitra",
-                      prefixIcon: Icon(Icons.search),
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(32.0)),
+                  child: new FlatButton(
+                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                    child: Material(
+                      borderRadius: BorderRadius.circular(30.0),
+                      shadowColor: Colors.cyanAccent.shade100,
+                      elevation: 5.0,
+                      child: MaterialButton(
+                        minWidth: 200.0,
+                        height: 42.0,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => MapLayout(),
+                              )
+                          );
+                        },
+                        color: Colors.cyan[800],
+                        child: Text('Cari mitra dengan Maps', style: TextStyle(color: Colors.white)),
+                      ),
                     ),
                   ),
                 ),

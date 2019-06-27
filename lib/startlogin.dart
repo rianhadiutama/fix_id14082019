@@ -116,7 +116,7 @@ class _LoginState extends State<Login> {
       );
       final registrationLabel = FlatButton(
         child: Text(
-          'Belum Daftar? Registrasi!',
+          'Belum Daftar? Registrasi !',
           style: TextStyle(color: Colors.black54),
         ),
         onPressed: () {},

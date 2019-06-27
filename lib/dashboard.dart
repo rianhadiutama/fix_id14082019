@@ -13,6 +13,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
         title: new Text('FIX ID'),
 
@@ -167,7 +168,7 @@ class _DashboardState extends State<Dashboard> {
                               padding: const EdgeInsets.all(10.0),
                               alignment: Alignment.center,
                               width: 1.7976931348623157e+308,
-                              height: 160.0,
+                              height: 100.0,
                             )
                           ]
 
@@ -190,7 +191,7 @@ class _DashboardState extends State<Dashboard> {
                 padding: const EdgeInsets.all(5.0),
                 alignment: Alignment.center,
                 width: 1.7976931348623157e+308,
-                height: 250.0,
+                height: 175,
               )
             ]
 

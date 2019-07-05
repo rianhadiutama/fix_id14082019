@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'list_servismobil.dart';
+import 'listservis.dart';
 class DashboardKendaraan extends StatefulWidget {
   @override
   _DashboardKendaraanState createState() => _DashboardKendaraanState();
@@ -116,7 +116,7 @@ class _DashboardKendaraanState extends State<DashboardKendaraan> {
                                     onPressed: () => {
                                       Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => ListServisMobil())),
+                                          MaterialPageRoute(builder: (context) => ListServis())),
                                     },
                                     padding: EdgeInsets.all(10.0),
                                     child: Column( // Replace with a Row for horizontal icon + text

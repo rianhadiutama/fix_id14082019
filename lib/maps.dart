@@ -49,8 +49,8 @@ class _MapLayoutState extends State<MapLayout> {
               child: FloatingActionButton(
                 onPressed: () => print('button pressed'),
                 materialTapTargetSize: MaterialTapTargetSize.padded,
-                backgroundColor: Colors.cyan,
-                child: const Icon(Icons.map, size: 30.0),
+                backgroundColor: Colors.white,
+                child: const Icon(Icons.my_location, size: 30.0),
               ),
             ),
           ),

@@ -42,7 +42,6 @@ class _ListServisMobilState extends State<ListServisMobil> {
                 )
             )
         )
-
       ,
 
         body:

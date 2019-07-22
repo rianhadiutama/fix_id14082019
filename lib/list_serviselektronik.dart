@@ -3,12 +3,12 @@ import 'deskripsibengkel.dart';
 import 'maps.dart';
 
 
-class ListServis extends StatefulWidget {
+class ListServisElektronik extends StatefulWidget {
   @override
-  _ListServisState createState() => _ListServisState();
+  _ListServisElektronikState createState() => _ListServisElektronikState();
 }
 
-class _ListServisState extends State<ListServis> {
+class _ListServisElektronikState extends State<ListServisElektronik> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +64,7 @@ class _ListServisState extends State<ListServis> {
               ),
               title: Text('Astra Honda'),
               subtitle: Text(
-                      'No Telepon : 0853-1715-2244'
+                  'No Telepon : 0853-1715-2244'
 
               ),
               trailing: new Container(

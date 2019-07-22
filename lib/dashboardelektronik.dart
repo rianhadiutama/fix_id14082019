@@ -116,6 +116,23 @@ class _DashboardElektronikState extends State<DashboardElektronik> {
                                     child: Column( // Replace with a Row for horizontal icon + text
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
+                                        Icon(Icons.settings_cell),
+                                        Text("MESIN CUCI"
+                                          ,
+                                          style: new TextStyle(fontSize:12.0,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: "Times New Roman"),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  FlatButton(
+                                    onPressed: () => {},
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Column( // Replace with a Row for horizontal icon + text
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
                                         Icon(Icons.camera_enhance),
                                         Text("KAMERA"
                                           ,

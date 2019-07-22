@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'rincian.dart';
 
 class PesanJasa extends StatefulWidget {
 
@@ -10,6 +11,72 @@ class PesanJasa extends StatefulWidget {
 class _PesanJasa extends State<PesanJasa> {
   @override
   Widget build(BuildContext context) {
+    final namalengkap = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      decoration: InputDecoration(
+        hintText: 'Nama',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+    final nohp = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      decoration: InputDecoration(
+        hintText: 'Nomor Handphone',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+    final kendala = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      decoration: InputDecoration(
+        hintText: 'Kendala',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+
+    final password = TextFormField(
+      autofocus: false,
+      obscureText: true,
+      decoration: InputDecoration(
+        hintText: 'Password',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+
+    final tombolpesansekarang = Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: Material(
+        borderRadius: BorderRadius.circular(30.0),
+        shadowColor: Colors.cyanAccent.shade100,
+        elevation: 5.0,
+        child: MaterialButton(
+          minWidth: 200.0,
+          height: 42.0,
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Rincian()
+                )
+            );
+          },
+          color: Colors.cyan[800],
+          child: Text('Pesan Sekarang', style: TextStyle(color: Colors.white)),
+        ),
+      ),
+    );
+    final tombolbatal = FlatButton(
+      child: Text(
+        'Cancel ?',
+        style: TextStyle(color: Colors.black54),
+      ),
+      onPressed: () {},
+    );
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
@@ -41,146 +108,23 @@ class _PesanJasa extends State<PesanJasa> {
           )
         ],
       ),
-      body:
-      new Container(
-            child:
-              new Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  //DATA PEMESANAN
-
-    
-                  //ISI DATA 
-                  new Container(
-                    padding: const EdgeInsets.fromLTRB(3.0, 3.0, 3.0, 1.0),
-                    alignment: Alignment.center,
-                    width: 300.0,
-                    height: 75.0,
-                    child: 
-                      new Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                        new TextField(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Nama Lengkap'),
-                          controller: new TextEditingController(),
-                          ),
-                        ]
-                      ),
-                  ),
-                  
-                  new Container(
-                    padding: const EdgeInsets.fromLTRB(3.0, 3.0, 3.0, 1.0),
-                    alignment: Alignment.center,
-                    width: 300.0,
-                    height: 75.0,
-                    child: 
-                      new Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                        new TextField(
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Email'),
-                          controller: new TextEditingController(),
-                          ),
-                        ]
-                      ),
-                  ),
-    
-                  new Container(
-                    padding: const EdgeInsets.fromLTRB(3.0, 3.0, 3.0, 1.0),
-                    alignment: Alignment.center,
-                    width: 300.0,
-                    height: 75.0,
-                    child: 
-                      new Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                        new TextField(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: '+62xxxxxxxxxx / 08xxxxxxxxx',
-                              labelText: 'Nomor HP/WA'),
-                          controller: new TextEditingController(),
-                          ),
-                        ]
-                      ),
-                  ),
-
-    
-                  new Container(
-                    padding: const EdgeInsets.fromLTRB(3.0, 3.0, 3.0, 1.0),
-                    alignment: Alignment.center,
-                    width: 300.0,
-                    height: 75.0,
-                    child: 
-                      new Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                        new TextField(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Kendala'),
-                          controller: new TextEditingController(),
-                          ),
-                        ]
-                      ),
-                  ),
-                  new Container(
-                    padding: const EdgeInsets.fromLTRB(3.0, 3.0, 3.0, 1.0),
-                    alignment: Alignment.center,
-                    width: 300.0,
-                    height: 100.0,
-                    child: new Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        new MaterialButton(
-                          minWidth: 100.0,
-                          height: 42.0,
-                          onPressed: () {
-
-                          },
-                          color: Colors.cyan[800],
-                          child: Text('Pesan Sekarang', style: TextStyle(color: Colors.white)),
-                        ),
-                        new MaterialButton(
-                          minWidth: 100.0,
-                          height: 42.0,
-                          onPressed: () {
-
-                          },
-                          color: Colors.cyan[800],
-                          child: Text('Cancel', style: TextStyle(color: Colors.white)),
-                        ),
-                      ],
-                    ),
-
-                  ),
+      body: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.only(left: 24.0, right: 24.0),
+          children: <Widget>[
+            SizedBox(height: 48.0),
+            namalengkap,
+            SizedBox(height: 20.0),
+            nohp,
+            SizedBox(height: 20.0),
+            kendala,
+            SizedBox(height: 48.0),
+            tombolpesansekarang,
+            tombolbatal,
+          ],
+        ),
 
 
-    
-                ]
-
-              ),
-    
-            padding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 1.0),
-            alignment: Alignment.center,
-          ), 
     );
   }
 }

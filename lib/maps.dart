@@ -45,15 +45,16 @@ class _MapLayoutState extends State<MapLayout> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Align(
-              alignment: Alignment.topRight,
+              alignment: Alignment.bottomCenter,
               child: FloatingActionButton(
                 onPressed: () => print('button pressed'),
                 materialTapTargetSize: MaterialTapTargetSize.padded,
-                backgroundColor: Colors.white,
-                child: const Icon(Icons.my_location, size: 30.0),
+                backgroundColor: Colors.cyan,
+                child: const Icon(Icons.my_location, size: 30.0,color: Colors.white,),
               ),
             ),
           ),
+
         ],
       )
 

@@ -22,7 +22,7 @@ class _DashboardState extends State<Dashboard> {
         ],
         leading: new Container(),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      /**bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0, // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
@@ -38,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
               title: Text('Profile')
           )
         ],
-      ),
+      ),*/
       body:
       new Container(
         child:

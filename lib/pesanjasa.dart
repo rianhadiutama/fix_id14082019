@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'rincian.dart';
+import 'listservis.dart';
 
 class PesanJasa extends StatefulWidget {
 
@@ -9,13 +10,36 @@ class PesanJasa extends StatefulWidget {
 }
 
 class _PesanJasa extends State<PesanJasa> {
+  List<String> _locations = ['Ganti Oli','Ganti Busi', 'Servis Ringan', 'Servis Berat']; // Option 2
+  String _selectedLocation; // Option 2
   @override
   Widget build(BuildContext context) {
+    final nopemesanan = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      decoration: InputDecoration(
+        icon: const Icon(Icons.add_to_photos),
+        hintText: 'Nomor Pemesanan',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
     final namalengkap = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'Nama',
+        icon: const Icon(Icons.person),
+        hintText: 'Nama Pemesanan',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+    final alamatpemesanan = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      decoration: InputDecoration(
+        icon: const Icon(Icons.home),
+        hintText: 'Alamat Pemesanan',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -24,15 +48,49 @@ class _PesanJasa extends State<PesanJasa> {
       keyboardType: TextInputType.text,
       autofocus: false,
       decoration: InputDecoration(
+        icon: const Icon(Icons.phone),
         hintText: 'Nomor Handphone',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
+
+    final jenispemesanan = FormField(
+      builder: (FormFieldState state){
+        return InputDecorator(
+          decoration: InputDecoration(
+            icon: const Icon(Icons.add_box),
+            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          ),
+          child: DropdownButtonHideUnderline(
+              child: DropdownButton(
+                hint: Text('Pilih Jenis Servicemu'),
+                value: _selectedLocation,
+                onChanged: (newValue) {
+                  setState(() {
+                    _selectedLocation = newValue;
+                  });
+                },
+                items: _locations.map((location) {
+                  return DropdownMenuItem(
+                    child: new Text(location),
+                    value: location,
+                  );
+                }).toList(),
+
+              ),
+          ),
+        );
+      },
+    );
+
+
     final kendala = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
       decoration: InputDecoration(
+        icon: const Icon(Icons.create),
         hintText: 'Kendala',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
@@ -72,7 +130,7 @@ class _PesanJasa extends State<PesanJasa> {
     );
     final tombolbatal = FlatButton(
       child: Text(
-        'Cancel ?',
+        'Kembali',
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {},
@@ -91,33 +149,21 @@ class _PesanJasa extends State<PesanJasa> {
         ],
         leading: new Container(),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile')
-          )
-        ],
-      ),
+
       body: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
-            SizedBox(height: 48.0),
+            SizedBox(height: 20.0),
+            nopemesanan,
+            SizedBox(height: 20.0),
             namalengkap,
+            SizedBox(height: 20.0),
+            alamatpemesanan,
             SizedBox(height: 20.0),
             nohp,
             SizedBox(height: 20.0),
-            kendala,
+            jenispemesanan,
             SizedBox(height: 48.0),
             tombolpesansekarang,
             tombolbatal,

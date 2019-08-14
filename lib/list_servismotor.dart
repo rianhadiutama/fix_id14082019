@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'deskripsibengkel.dart';
 import 'maps.dart';
-
+import 'pesanjasa.dart';
 
 class ListServisMotor extends StatefulWidget {
   @override
@@ -13,19 +13,19 @@ class _ListServisMotorState extends State<ListServisMotor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          actions: <Widget>[
+        actions: <Widget>[
 
-          ],
-          leading: new Container(),
-          title: Text('DAFTAR SERVIS MOTOR',
-              style: TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.bold
-              )
-          )
+        ],
+        leading: new Container(),
+        title: Text('DAFTAR SERVIS MOBIL',
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold
+            )
+        ),
       ),
       body: ListView(
         children: <Widget>[
-          Card(
+          /**Card(
             child: ListTile(
               leading: new FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
@@ -49,12 +49,12 @@ class _ListServisMotorState extends State<ListServisMotor> {
                 ),
               ),
             ),
-          ),
+          ),*/
 
           Card(
             child: ListTile(
               leading: new FlatButton(key:null, onPressed:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DeskripsiServis()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PesanJasa()),);
               },
                 child:
                 new Image.network(
@@ -62,7 +62,7 @@ class _ListServisMotorState extends State<ListServisMotor> {
                   fit:BoxFit.fitHeight,
                 ),
               ),
-              title: Text('Astra Honda'),
+              title: Text('Astra Honda Motor'),
               subtitle: Text(
                   'No Telepon : 0853-1715-2244'
 
@@ -90,7 +90,7 @@ class _ListServisMotorState extends State<ListServisMotor> {
                           size: 20.0),
 
                       new Icon(
-                          Icons.star,
+                          Icons.star_border,
                           color: const Color(0xFF000000),
                           size: 20.0),
 
@@ -110,62 +110,7 @@ class _ListServisMotorState extends State<ListServisMotor> {
               isThreeLine: true,
             ),
           ),
-          Card(
-            child: ListTile(
-              leading: new FlatButton(key:null, onPressed:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DeskripsiServis()),);
-              },
-                child:
-                new Image.asset('assets/kisspng-toyota-sa-car-toyota-camry-logo-5aeca091512ac4.4912578815254570413325.png',width: 50,height: 50,),
-              ),
-              title: Text('Toyota Servis'),
-              subtitle: Text(
-                  'No Telepon : 0853-1715-2244'
 
-              ),
-              trailing: new Container(
-                child:
-                new Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      new Icon(
-                          Icons.star,
-                          color: const Color(0xFF000000),
-                          size: 20.0),
-
-                      new Icon(
-                          Icons.star,
-                          color: const Color(0xFF000000),
-                          size: 20.0),
-
-                      new Icon(
-                          Icons.star,
-                          color: const Color(0xFF000000),
-                          size: 20.0),
-
-                      new Icon(
-                          Icons.star,
-                          color: const Color(0xFF000000),
-                          size: 20.0),
-
-                      new Icon(
-                          Icons.star_border,
-                          color: const Color(0xFF000000),
-                          size: 20.0)
-                    ]
-
-                ),
-
-                padding: const EdgeInsets.all(0.0),
-                alignment: Alignment.center,
-                width: 120.0,
-                height: 50.0,
-              ),
-              isThreeLine: true,
-            ),
-          ),
         ],
       ),
     );

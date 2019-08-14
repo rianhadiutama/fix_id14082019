@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'listservis.dart';
+import 'list_servismotor.dart';
+
 class DashboardKendaraan extends StatefulWidget {
   @override
   _DashboardKendaraanState createState() => _DashboardKendaraanState();
@@ -16,23 +18,23 @@ class _DashboardKendaraanState extends State<DashboardKendaraan> {
         ],
         leading: new Container(),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
-        items: [
+      /**bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0, // this will be set when a new tab is tapped
+          items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
+          icon: new Icon(Icons.home),
+          title: new Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
+          icon: new Icon(Icons.mail),
+          title: new Text('Messages'),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile')
+          icon: Icon(Icons.person),
+          title: Text('Profile')
           )
-        ],
-      ),
+          ],
+          ),*/
       body:
       new Container(
         child:
@@ -95,7 +97,11 @@ class _DashboardKendaraanState extends State<DashboardKendaraan> {
                                 children: <Widget>[
 
                                   FlatButton(
-                                    onPressed: () => {},
+                                    onPressed: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => ListServisMotor())),
+                                    },
                                     padding: EdgeInsets.all(10.0),
                                     child: Column( // Replace with a Row for horizontal icon + text
                                       mainAxisAlignment: MainAxisAlignment.center,

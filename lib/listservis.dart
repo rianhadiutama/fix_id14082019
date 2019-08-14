@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'deskripsibengkel.dart';
 import 'maps.dart';
+import 'pesanjasa.dart';
 
 
 class ListServis extends StatefulWidget {
@@ -21,11 +22,11 @@ class _ListServisState extends State<ListServis> {
               style: TextStyle(
                   color: Colors.white, fontWeight: FontWeight.bold
               )
-          )
+          ),
       ),
       body: ListView(
         children: <Widget>[
-          Card(
+          /**Card(
             child: ListTile(
               leading: new FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
@@ -49,12 +50,12 @@ class _ListServisState extends State<ListServis> {
                 ),
               ),
             ),
-          ),
+          ),*/
 
           Card(
             child: ListTile(
               leading: new FlatButton(key:null, onPressed:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DeskripsiServis()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PesanJasa()),);
               },
                 child:
                 new Image.network(
@@ -113,7 +114,7 @@ class _ListServisState extends State<ListServis> {
           Card(
             child: ListTile(
               leading: new FlatButton(key:null, onPressed:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DeskripsiServis()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PesanJasa()),);
               },
                 child:
                 new Image.asset('assets/kisspng-toyota-sa-car-toyota-camry-logo-5aeca091512ac4.4912578815254570413325.png',width: 50,height: 50,),
